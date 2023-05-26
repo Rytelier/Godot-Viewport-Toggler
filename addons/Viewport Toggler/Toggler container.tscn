@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c1b4c3twvmjg"]
+
+[node name="Toggler container" type="BoxContainer"]
+modulate = Color(1, 1, 1, 0.25)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -178.0
+offset_top = -77.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 0
+alignment = 2
+vertical = true
+
+[node name="Various" type="BoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Light" type="Button" parent="Various"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "Toggle unshaded"
+mouse_filter = 1
+icon_alignment = 1
+
+[node name="Half" type="Button" parent="Various"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "Toggle half resolution"
+mouse_filter = 1
+icon_alignment = 1
+
+[node name="Gizmos" type="Button" parent="Various"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "Toggle gizmos"
+mouse_filter = 1
+icon_alignment = 1
+
+[node name="Gizmos" type="BoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 2
