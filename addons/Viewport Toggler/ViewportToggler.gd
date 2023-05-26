@@ -117,16 +117,16 @@ func ToggleUnshaded():
 	for item in range(VariousMenu.item_count):
 		if VariousMenu.get_item_text(item) == "Display Unshaded":
 			idxU = item
-			idN = VariousMenu.get_item_id(item)
+			idU = VariousMenu.get_item_id(item)
 		if VariousMenu.get_item_text(item) == "Display Normal":
 			idxN = item
-			idU = VariousMenu.get_item_id(item)
+			idN = VariousMenu.get_item_id(item)
 	
-	if VariousMenu.is_item_checked(idU):
-		VariousMenu.set_item_checked(idN, true)
-		VariousMenu.set_item_checked(idU, false)
+	if VariousMenu.is_item_checked(idxU):
+		VariousMenu.set_item_checked(idxN, true)
+		VariousMenu.set_item_checked(idxU, false)
 		VariousMenu.emit_signal("id_pressed", idN)
 	else:
-		VariousMenu.set_item_checked(idU, true)
-		VariousMenu.set_item_checked(idN, false)
+		VariousMenu.set_item_checked(idxU, true)
+		VariousMenu.set_item_checked(idxN, false)
 		VariousMenu.emit_signal("id_pressed", idU)
