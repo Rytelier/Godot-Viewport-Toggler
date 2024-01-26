@@ -15,14 +15,14 @@ var settingsFile : ConfigFile
 
 func _enter_tree():
 	var found : Array
-	FindByName(get_window(), "GizmosMenu", found)
+	FindByName(get_editor_interface().get_editor_main_screen().get_window(), "GizmosMenu", found)
 	GizmosMenu = found[0]
 	found.clear()
-	FindByName(get_window(), "display_advanced", found)
+	FindByName(get_editor_interface().get_editor_main_screen().get_window(), "DisplayAdvanced", found)
 	VariousMenu = found[0].get_parent()
 	found.clear()
 	
-	FindByClass(get_window(), "Node3DEditorViewport", found)
+	FindByClass(get_editor_interface().get_editor_main_screen().get_window(), "Node3DEditorViewport", found)
 	Viewport3DControl = found[0].get_child(1)
 	
 	settingsFile = ConfigFile.new()
@@ -78,7 +78,7 @@ func FindByName(node: Node, nodeName : String, result : Array) -> void:
 func FindByClass(node: Node, className : String, result : Array) -> void:
 	if node.is_class(className):
 		result.push_back(node)
-	for child in node.get_children():
+	for child in node.get_children(true):
 		FindByClass(child, className, result)
 
 func ContainerSelect(b):
